@@ -1,0 +1,18 @@
+.timer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    color: rgb(200, 194, 194);
+}
+
+.strBtn {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+}

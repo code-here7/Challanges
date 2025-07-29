@@ -1,0 +1,47 @@
+📋 Objective:
+Build a simple REST API using Node.js (no database) to manage a list of contacts. All data should be stored in memory using a plain JavaScript array or object.
+
+📦 Requirements:
+Build a Node.js Express server that allows the following operations:
+
+📌 1. Create a Contact
+Route: POST /contacts
+
+Body: JSON
+
+json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "9876543210"
+}
+Return the created contact with a unique id.
+
+📌 2. Read All Contacts
+Route: GET /contacts
+
+Return all contacts in an array.
+
+📌 3. Read a Contact by ID
+Route: GET /contacts/:id
+
+Return the contact with matching ID.
+
+If not found, return a 404.
+
+📌 4. Update a Contact
+Route: PUT /contacts/:id
+
+Body: JSON (any field can be updated: name, email, or phone)
+
+Return the updated contact.
+
+If not found, return a 404.
+
+📌 5. Delete a Contact
+Route: DELETE /contacts/:id
+
+Return a success message.
+
+If not found, return a 404.
+
