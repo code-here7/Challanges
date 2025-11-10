@@ -1,0 +1,25 @@
+
+.heading {
+    color: rgb(32, 173, 195);
+}
+.strtEle {
+    display: flex;
+    justify-content: space-evenly;
+}
+.inputs {
+    width: 50px;
+    height: 40px;
+}
+.playEle {
+    margin: 30px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;   
+}
+.playBut {
+   margin: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;    
+}

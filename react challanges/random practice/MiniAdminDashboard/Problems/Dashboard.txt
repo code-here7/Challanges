@@ -1,0 +1,131 @@
+⚙️ "Mini Admin Dashboard"
+🕒 Duration: 1 Hour
+🧠 Focus: Logic, Role-based Access, Component Design
+📚 Stack: React only (no backend) — state and logic only
+
+🧾 📁 Background
+Ek company ke liye tum ek lightweight Admin Dashboard bana rahe ho jisme:
+
+Login karne par user ka role set hota hai (admin, manager, viewer)
+
+Based on role, different modules dikhte hain:
+
+admin: access to Users, Reports, Settings
+
+manager: access to Reports only
+
+viewer: can only see Dashboard summary
+
+🔐 Roles Logic:
+Role	Access Modules
+Admin	Dashboard, Users, Reports, Settings
+Manager	Dashboard, Reports
+Viewer	Dashboard only
+
+🎯 What You Have to Build
+1. Login Selector
+Simple dropdown: select role
+
+On select, show dashboard for that role
+
+2. Sidebar Menu
+Dynamic links based on selected role
+
+Use array of permissions for conditionally rendering sidebar
+
+3. Main Section
+Show simple content based on active menu:
+
+Dashboard → Summary of data (fake static text)
+
+Users → List of users
+
+Reports → List of reports
+
+Settings → "Change Password" fake section
+
+4. Access Control Logic
+If role ≠ allowed for module, show "Access Denied"
+
+🧩 Fake Static Data (no API)
+js
+Copy
+Edit
+// users.js
+export const users = [
+  { id: 1, name: "Yash", role: "admin" },
+  { id: 2, name: "Riya", role: "manager" },
+  { id: 3, name: "Kunal", role: "viewer" }
+];
+
+export const reports = [
+  { id: 1, title: "Sales Q1" },
+  { id: 2, title: "Growth Metrics" }
+];
+🧱 Suggested File Structure:
+css
+Copy
+Edit
+src/
+├── App.jsx
+├── components/
+│   ├── Sidebar.jsx
+│   ├── MainContent.jsx
+│   ├── RoleSelector.jsx
+│   └── modules/
+│       ├── Dashboard.jsx
+│       ├── Users.jsx
+│       ├── Reports.jsx
+│       └── Settings.jsx
+├── utils/
+│   └── roleAccess.js
+└── data/
+    ├── users.js
+    └── reports.js
+🧠 Key Concepts to Demonstrate
+Component-based thinking
+
+Role-based UI logic
+
+Conditional rendering
+
+State sharing across components
+
+Clean access mapping (like a roleAccessMap object)
+
+🥇 Bonus (Optional if time permits)
+Add Logout button
+
+Show current user name + role at top
+
+Add a notification badge near Reports (fake value)
+
+🔍 Sample roleAccessMap logic
+js
+Copy
+Edit
+const roleAccess = {
+  admin: ['dashboard', 'users', 'reports', 'settings'],
+  manager: ['dashboard', 'reports'],
+  viewer: ['dashboard']
+}
+✅ Final Output Expectations
+✅ Role selector working
+
+✅ Sidebar changes as per role
+
+✅ Conditional access
+
+✅ Different content loads per module
+
+✅ Minimal clean UI, logic clear
+
+
+
+
+
+
+
+
+
+

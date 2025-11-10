@@ -46,6 +46,7 @@ const server = http.createServer((req,resp) => {
     if(req.method == 'GET' && req.url == "/users")
     {
         try{
+            resp.writeHead(200, {'Content-Type': 'application/json'});
             resp.end(JSON.stringify(users));
         }
         catch (e)
@@ -65,6 +66,7 @@ const server = http.createServer((req,resp) => {
             // console.log(body);
             const newuser = JSON.parse(body);
             users.push(newuser);
+            resp.writeHead(200, {'Content-Type': 'application/json'});
             resp.end(JSON.stringify(users));
            });
         }
@@ -88,6 +90,7 @@ const server = http.createServer((req,resp) => {
             // console.log(updateuser)
             users = users.map((item) => item.id == id ? {...item,...updateuser} : item);
             console.log(users);
+            resp.writeHead(200, {'Content-Type': 'application/json'});
             resp.end(body);
            });
         }
@@ -103,6 +106,7 @@ const server = http.createServer((req,resp) => {
          const id = req.url.split("/")[2];
          users = users.filter(item => item.id != id);
          console.log(users);
+         resp.writeHead(200, {'Content-Type': 'application/json'});
          resp.end(JSON.stringify(users));
         }
         catch(e)
